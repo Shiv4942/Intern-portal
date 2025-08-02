@@ -1,0 +1,8 @@
+import localFont from 'next/font/local';
+
+const inter = localFont({
+  src: './fonts/Inter-Regular.woff2', // Place the font file in your project
+  variable: '--font-inter',
+});
+
+export default inter;
