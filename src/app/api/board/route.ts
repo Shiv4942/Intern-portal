@@ -1,10 +1,14 @@
 import { NextResponse } from 'next/server';
-import { promises as fs } from 'fs';
-import path from 'path';
 
 export async function GET() {
-  const filePath = path.join(process.cwd(), 'data', 'leaderboard.json');
-  const fileData = await fs.readFile(filePath, 'utf-8');
-  const leaderboard = JSON.parse(fileData);
-  return NextResponse.json(leaderboard);
+  // Mock leaderboard data with Indian names
+  const data = [
+    { name: 'Amit Sharma', totalDonations: 7000 },
+    { name: 'Priya Singh', totalDonations: 6500 },
+    { name: 'Rahul Verma', totalDonations: 4800 },
+    { name: 'Sneha Patel', totalDonations: 4200 },
+    { name: 'Vikram Rao', totalDonations: 3900 },
+    { name: 'Anjali Mehta', totalDonations: 3500 },
+  ];
+  return NextResponse.json(data);
 }
