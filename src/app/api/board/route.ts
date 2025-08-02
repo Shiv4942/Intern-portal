@@ -10,5 +10,6 @@ export async function GET() {
     { name: 'Vikram Rao', totalDonations: 3900 },
     { name: 'Anjali Mehta', totalDonations: 3500 },
   ];
+  await fetch('/api/board');
   return NextResponse.json(data);
 }

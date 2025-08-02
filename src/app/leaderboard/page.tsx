@@ -10,7 +10,7 @@ type LeaderboardUser = {
 };
 
 async function getLeaderboard() {
-  const res = await fetch("http://localhost:3000/api/board");
+  const res = await fetch("/api/board");
   return res.json();
 }
 
