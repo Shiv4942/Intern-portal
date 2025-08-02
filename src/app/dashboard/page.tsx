@@ -2,6 +2,12 @@
 
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
+type UserData = {
+  name: string;
+  referralCode: string;
+  totalDonations: number;
+  // add other fields as needed
+};
 
 async function getUserData() {
   const res = await fetch("http://localhost:3000/api/user")
@@ -9,7 +15,7 @@ async function getUserData() {
 }
 
 export default function DashboardPage() {
-  const [data, setData] = useState<any>(null);
+  const [data, setData] = useState<UserData | null>(null);
   const router = useRouter();
 
   useEffect(() => {
